@@ -6,8 +6,16 @@ public class BallControl : MonoBehaviour {
 	public GameObject ballSprite;
 
 	void Start () {
-		hi (3.0f);
+		StartCoroutine ("StartGame");
+		//hi (5.0f);
+		//GoBall ();
+	}
+
+	IEnumerator StartGame()
+	{
+		yield return new WaitForSeconds(3.0f);
 		GoBall ();
+		
 	}
 
 	IEnumerator hi(float secs)
