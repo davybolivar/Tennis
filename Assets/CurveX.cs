@@ -17,8 +17,10 @@ public class CurveX : MonoBehaviour {
 		dur = ballCollider.transform.rigidbody2D.velocity.x/4f;
 		min = ballCollider.transform.localPosition.y+offset;
 		max = ballCollider.transform.localPosition.y + 1f;
-		transform.position = new Vector3(ballCollider.transform.localPosition.x,  Mathf.PingPong(Time.time * dur, max-min)+min, transform.localPosition.z);
-		//transform.position = Vector3.Lerp(ballCollider.transform.localPosition,new Vector3(ballCollider.transform.localPosition.x,  Mathf.PingPong(Time.time * dur, max-min)+min, transform.localPosition.z),
-		//                                  .5f);
+
+		transform.position = Vector3.Lerp(ballCollider.transform.localPosition,new Vector3(ballCollider.transform.localPosition.x,  Mathf.PingPong(Time.time * dur, max-min)+min, transform.localPosition.z),
+		                                  1f);
+
+		//transform.position = new Vector3(ballCollider.transform.localPosition.x,  Mathf.PingPong(Time.time * dur, max-min)+min, transform.localPosition.z);
 	}
 }

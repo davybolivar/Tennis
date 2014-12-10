@@ -3,9 +3,10 @@ using System.Collections;
 
 public class BallControl : MonoBehaviour {
 	public GameObject camera;
+	public GameObject ballSprite;
 
 	void Start () {
-		hi (2.0f);
+		hi (3.0f);
 		GoBall ();
 	}
 
@@ -43,7 +44,7 @@ public class BallControl : MonoBehaviour {
 
 		gameObject.transform.position = new Vector2 (0, 0);
 
-		hi (0.5f);
+		hi (5.0f);
 		GoBall ();
 	}
 
@@ -56,5 +57,24 @@ public class BallControl : MonoBehaviour {
 
 			camera.GetComponent<LerpTarget>().camOffset *= -1f;
 		}
+		else if(col.gameObject.tag == "P1Goal" || col.gameObject.tag == "P2Goal")
+		{
+			//resetBall();
+			StartCoroutine("ReplayDelay");
+		}
+		else if(col.gameObject.tag == "Out")
+		{
+			StartCoroutine("ReplayDelay");
+		}
+	}
+
+	IEnumerator ReplayDelay()
+	{	
+		camera.transform.position = Vector3.Lerp (camera.transform.localPosition, new Vector3(0,0,camera.transform.localPosition.z),.1f);
+		ballSprite.GetComponent<TrailRenderer> ().enabled = false;
+		hasWon ();
+		yield return new WaitForSeconds (3f);
+		ballSprite.GetComponent<TrailRenderer> ().enabled = true;
+		resetBall();
 	}
 }
