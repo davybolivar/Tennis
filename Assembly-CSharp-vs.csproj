@@ -46,8 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BallControl.cs" />
-     <Compile Include="Assets\CurveX.cs" />
+     <Compile Include="Assets\Scripts\BallControl.cs" />
+     <Compile Include="Assets\Scripts\CurveX.cs" />
      <Compile Include="Assets\Scripts\LerpTarget.cs" />
      <Compile Include="Assets\Scripts\PlayerControls.cs" />
  <Reference Include="UnityEngine.UI">

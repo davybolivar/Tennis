@@ -8,14 +8,15 @@ public class LerpTarget : MonoBehaviour {
 
 	public float camOffset;
 	void Update () {
-		if(transform.gameObject.name != "Main Camera")
-		{
+		//if(transform.gameObject.name != "Main Camera")
+		//{
 			LerpToTarget ();
-		}
+		/*}
 		else
 		{
 			CamLerpToTarget();
 		}
+		*/
 	}
 
 	void CamLerpToTarget(){
