@@ -13,6 +13,8 @@ public class BodyMovement : MonoBehaviour {
 	public GameObject lid2;
 
 	public GameObject playerObj;
+	
+	public GameObject headObj;
 
 	public float legMax, legMin, rLegMax,rLegMin;
 	public float legDur, rLegDur;
@@ -24,6 +26,9 @@ public class BodyMovement : MonoBehaviour {
 
 	public float lid1Max, lid1Min, lid2Max, lid2Min;
 	public float lid1Dur, lid2Dur;
+
+	public float headMax, headMin;
+	public float headDur;
 
 	void Start(){
 		legMax = 60f;
@@ -44,6 +49,10 @@ public class BodyMovement : MonoBehaviour {
 		lid1Min = 1f;
 		lid2Max = 1.47f;
 		lid2Min = 1f;
+
+		headMax = .3f;
+		headMin = 0f;
+		headDur = 2f;
 	}
 
 	void Update(){
@@ -79,6 +88,9 @@ public class BodyMovement : MonoBehaviour {
 		                                  		lid1.transform.localScale.z);
 		lid2.transform.localScale = new Vector3(lid2.transform.localScale.x, Mathf.PingPong(Time.time * lid2Dur, lid2Max-lid2Min)+lid2Min,
 		                                        lid2.transform.localScale.z);
+
+		headObj.transform.localPosition = new Vector3 (Mathf.PingPong (Time.time * headDur, headMax - headMin) + headMin, headObj.transform.localPosition.y,
+		                                              headObj.transform.localPosition.z);
 	}
 
 	void IdleAnim()
@@ -95,6 +107,8 @@ public class BodyMovement : MonoBehaviour {
 		lid1.transform.localScale = Vector3.Lerp(lid1.transform.localScale, new Vector3(lid1.transform.localScale.x,1f,lid1.transform.localScale.z),.5f);
 		lid2.transform.localScale = Vector3.Lerp(lid2.transform.localScale, new Vector3(lid2.transform.localScale.x,1f,lid2.transform.localScale.z),.5f);
 
+		headObj.transform.localPosition = Vector3.Lerp(headObj.transform.localPosition, new Vector3(0,headObj.transform.localPosition.y,
+		                                                                                            headObj.transform.localPosition.z), .1f);
 	}
 	
 }
