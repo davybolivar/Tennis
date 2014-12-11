@@ -70,8 +70,8 @@ TextureImporter:
         y: 445
         width: 98
         height: 83
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .682496548, y: .186577484}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TennisSpriteSheet_Character_1
       rect:
@@ -80,8 +80,8 @@ TextureImporter:
         y: 493
         width: 59
         height: 85
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .191809088}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TennisSpriteSheet_Character_2
       rect:
@@ -90,8 +90,8 @@ TextureImporter:
         y: 515
         width: 98
         height: 58
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .201243505, y: .12804544}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TennisSpriteSheet_Character_3
       rect:
@@ -110,8 +110,8 @@ TextureImporter:
         y: 293
         width: 131
         height: 131
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .202128872}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TennisSpriteSheet_Character_5
       rect:
@@ -120,8 +120,8 @@ TextureImporter:
         y: 338
         width: 131
         height: 131
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .516132832, y: .116841793}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TennisSpriteSheet_Character_6
       rect:
@@ -160,8 +160,8 @@ TextureImporter:
         y: 170
         width: 126
         height: 82
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .646132946, y: .551817715}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TennisSpriteSheet_Character_11
       rect:
@@ -200,8 +200,8 @@ TextureImporter:
         y: 65
         width: 74
         height: 92
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5077824, y: .831772208}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TennisSpriteSheet_Character_15
       rect:
@@ -210,8 +210,8 @@ TextureImporter:
         y: 57
         width: 74
         height: 93
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .499999583, y: .809627056}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TennisSpriteSheet_Character_16
       rect:
@@ -220,8 +220,8 @@ TextureImporter:
         y: 0
         width: 27
         height: 38
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .716866374, y: .914114714}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TennisSpriteSheet_Character_17
       rect:
@@ -230,8 +230,8 @@ TextureImporter:
         y: 8
         width: 27
         height: 38
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .703312039, y: .914113581}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TennisSpriteSheet_Character_18
       rect:
@@ -240,8 +240,8 @@ TextureImporter:
         y: 10
         width: 28
         height: 38
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .682981193, y: .894852817}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: TennisSpriteSheet_Character_19
       rect:
@@ -250,8 +250,8 @@ TextureImporter:
         y: 10
         width: 19
         height: 45
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 2
+      pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
