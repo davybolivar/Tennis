@@ -8,16 +8,19 @@ public class AI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("RandomizeX",0,Random.Range(0,3f));
+		InvokeRepeating ("RandomizeX",2,Random.Range(0,2f));
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		var step = speed * Time.deltaTime;
+		if(target.GetComponent<BallControl>().ballServe == 2)
+		{
+			var step = speed * Time.deltaTime;
 		
-		// Move our position a step closer to the target.
-		transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x,target.transform.localPosition.y+offset,
+			// Move our position a step closer to the target.
+			transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x,target.transform.localPosition.y+offset,
 		                                                                         transform.position.z), speed*Time.deltaTime);
+		}
 	}
 
 	void RandomizeX(){

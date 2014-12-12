@@ -4,6 +4,7 @@ using System.Collections;
 public class BallControl : MonoBehaviour {
 	public GameObject camera;
 	public GameObject ballSprite;
+	public int ballServe;
 
 	void Start () {
 		StartCoroutine ("StartGame");
@@ -28,10 +29,12 @@ public class BallControl : MonoBehaviour {
 		if(rand < 50.0f)
 		{
 			rigidbody2D.AddForce(new Vector2(100.0f,20.0f));
+			ballServe = 1;
 		}
 		else 
 		{
 			rigidbody2D.AddForce(new Vector2(-100.0f,-20.0f));
+			ballServe = 2;
 		}
 	}
 
@@ -64,6 +67,11 @@ public class BallControl : MonoBehaviour {
 			rigidbody2D.velocity = velY;
 
 			camera.GetComponent<LerpTarget>().camOffset *= -1f;
+
+			if(ballServe == 1)
+				ballServe = 2;
+			else
+				ballServe = 1;
 		}
 		else if(col.gameObject.tag == "P1Goal" || col.gameObject.tag == "P2Goal")
 		{
