@@ -62,6 +62,7 @@ public class BodyMovement : MonoBehaviour {
 		}
 		else
 		{
+			Reset();
 			IdleAnim ();
 		}
 	}
@@ -93,7 +94,7 @@ public class BodyMovement : MonoBehaviour {
 		                                              headObj.transform.localPosition.z);
 	}
 
-	void IdleAnim()
+	void Reset()
 	{
 
 		leg1.transform.rotation = Quaternion.Lerp(leg1.transform.rotation, Quaternion.Euler(new Vector3(leg1.transform.localRotation.x,leg1.transform.localRotation.y,0f)),.5f);
@@ -109,6 +110,32 @@ public class BodyMovement : MonoBehaviour {
 
 		headObj.transform.localPosition = Vector3.Lerp(headObj.transform.localPosition, new Vector3(0,headObj.transform.localPosition.y,
 		                                                                                            headObj.transform.localPosition.z), .1f);
+	}
+
+	void IdleAnim()
+	{
+		
+		leg1.transform.rotation = Quaternion.Lerp(leg1.transform.rotation, Quaternion.Euler(new Vector3(leg1.transform.localRotation.x,leg1.transform.localRotation.y,0f)),.5f);
+		leg2.transform.rotation = Quaternion.Lerp(leg2.transform.rotation, Quaternion.Euler(new Vector3(leg2.transform.localRotation.x,leg2.transform.localRotation.y,0f)),.5f);
+		
+		//Body
+		body.transform.rotation = Quaternion.Euler(body.transform.localRotation.x, body.transform.localRotation.y,
+		                                           Mathf.PingPong(Time.time * (bodyDur), bodyMax-bodyMin)+bodyMin);
+		
+		//Hair1 and Hair2
+		hair.transform.rotation = Quaternion.Euler(hair.transform.localRotation.x, hair.transform.localRotation.y,
+		                                           Mathf.PingPong(Time.time * (hair1Dur-150f), (hair1Max-30f)-(hair1Min+10f))+hair1Min);
+		hair2.transform.rotation = Quaternion.Euler(hair2.transform.localRotation.x, hair2.transform.localRotation.y,
+		                                            Mathf.PingPong(Time.time * hair2Dur, (hair2Max-5f)-(hair2Min+1f))+hair2Min);
+		
+		//Lid1 and Lid2
+		lid1.transform.localScale = new Vector3(lid1.transform.localScale.x, Mathf.PingPong(Time.time * lid1Dur, lid1Max-lid1Min)+lid1Min,
+		                                        lid1.transform.localScale.z);
+		lid2.transform.localScale = new Vector3(lid2.transform.localScale.x, Mathf.PingPong(Time.time * lid2Dur, lid2Max-lid2Min)+lid2Min,
+		                                        lid2.transform.localScale.z);
+		
+		headObj.transform.localPosition = new Vector3 (headObj.transform.localPosition.x, Mathf.PingPong (Time.time * 	(headDur-1f), (headMax-.2f) - headMin) + headMin,
+		                                               headObj.transform.localPosition.z);
 	}
 	
 }

@@ -86,6 +86,7 @@ public class BallControl : MonoBehaviour {
 
 	IEnumerator ReplayDelay()
 	{	
+		ballServe = 1;
 		camera.transform.position = Vector3.Lerp (camera.transform.localPosition, new Vector3(0,0,camera.transform.localPosition.z),.1f);
 		ballSprite.GetComponent<TrailRenderer> ().enabled = false;
 		hasWon ();

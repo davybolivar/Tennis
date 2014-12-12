@@ -58,6 +58,7 @@ public class P2BodyMovement : MonoBehaviour {
 		}
 		else
 		{
+			Reset();
 			IdleAnim();
 		}
 	}
@@ -85,7 +86,7 @@ public class P2BodyMovement : MonoBehaviour {
 		                                               headObj.transform.localPosition.z);
 	}
 	
-	void IdleAnim()
+	void Reset()
 	{
 		
 		leg1.transform.rotation = Quaternion.Lerp(leg1.transform.rotation, Quaternion.Euler(new Vector3(leg1.transform.localRotation.x,leg1.transform.localRotation.y,0f)),.5f);
@@ -99,6 +100,28 @@ public class P2BodyMovement : MonoBehaviour {
 		
 		headObj.transform.localPosition = Vector3.Lerp(headObj.transform.localPosition, new Vector3(0,headObj.transform.localPosition.y,
 		                                                                                            headObj.transform.localPosition.z), .1f);
+	}
+
+	void IdleAnim()
+	{
+		    //Leg
+			leg1.transform.rotation = Quaternion.Lerp(leg1.transform.rotation, Quaternion.Euler(new Vector3(leg1.transform.localRotation.x,leg1.transform.localRotation.y,0f)),.5f);
+			leg2.transform.rotation = Quaternion.Lerp(leg2.transform.rotation, Quaternion.Euler(new Vector3(leg2.transform.localRotation.x,leg2.transform.localRotation.y,0f)),.5f);
+
+			//Body
+			body.transform.rotation = Quaternion.Euler(body.transform.localRotation.x, body.transform.localRotation.y,
+			                                           Mathf.PingPong(Time.time * bodyDur, bodyMax-bodyMin)+bodyMin);
+			
+			//Hair1
+			hair.transform.rotation = Quaternion.Euler(hair.transform.localRotation.x, hair.transform.localRotation.y,
+			                                           Mathf.PingPong(Time.time * (hair1Dur-100), (hair1Max)-hair1Min)+hair1Min);
+			
+			//Ribbon
+			ribbon.transform.rotation = Quaternion.Euler(ribbon.transform.localRotation.x, ribbon.transform.localRotation.y,
+			                                             Mathf.PingPong(Time.time * ribbonDur, ribbonMax-ribbonMin)+ribbonMin);
+			
+		headObj.transform.localPosition = new Vector3 (headObj.transform.localPosition.x,Mathf.PingPong (Time.time * headDur, (headMax-.1f) - headMin) + headMin,
+			                                               headObj.transform.localPosition.z);
 	}
 	
 }
