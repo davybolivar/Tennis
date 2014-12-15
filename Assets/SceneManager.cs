@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SceneManager : MonoBehaviour {
-		
-	public void Play(){
+
+	public void PlayButton(){
 		Application.LoadLevel ("Play");
 	}
 
-	public void MainMenu()
-	{
+	public void MenuButton(){
 		Application.LoadLevel ("Menu");
 	}
 

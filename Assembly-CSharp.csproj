@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\LerpCircle.cs" />
+     <Compile Include="Assets\LerpColor.cs" />
      <Compile Include="Assets\LerpFrom.cs" />
      <Compile Include="Assets\SceneManager.cs" />
      <Compile Include="Assets\Scripts\AI.cs" />
@@ -62,6 +64,7 @@
      <Compile Include="Assets\Scripts\ScreenShake.cs" />
      <Compile Include="Assets\Scripts\SwingRacket.cs" />
      <Compile Include="Assets\Scripts\TriggerEffects.cs" />
+     <Compile Include="Assets\TextEffects.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
