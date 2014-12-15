@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\LerpFrom.cs" />
+     <Compile Include="Assets\SceneManager.cs" />
      <Compile Include="Assets\Scripts\AI.cs" />
      <Compile Include="Assets\Scripts\AISwing.cs" />
      <Compile Include="Assets\Scripts\BallControl.cs" />
