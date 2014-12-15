@@ -3,9 +3,14 @@ using System.Collections;
 
 public class LerpRotation : MonoBehaviour {
 	public float targetZ;
+	public float minRange, maxRange;
 	public float dur;
 
 	public GameObject trigger;
+
+	void Start(){
+		targetZ = Random.Range (minRange,maxRange);
+	}
 
 	void Update () {
 		if(trigger.GetComponent<TriggerEffects>().trigger)
