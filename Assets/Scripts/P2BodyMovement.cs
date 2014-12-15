@@ -88,7 +88,9 @@ public class P2BodyMovement : MonoBehaviour {
 	
 	void Reset()
 	{
-		
+		//playerObj.transform.localPosition = Vector3.Lerp (playerObj.transform.localPosition, new Vector3(playerObj.transform.localPosition.x,
+		//                                                                                            -3f, playerObj.transform.localPosition.z), .05f);
+
 		leg1.transform.rotation = Quaternion.Lerp(leg1.transform.rotation, Quaternion.Euler(new Vector3(leg1.transform.localRotation.x,leg1.transform.localRotation.y,0f)),.5f);
 		leg2.transform.rotation = Quaternion.Lerp(leg2.transform.rotation, Quaternion.Euler(new Vector3(leg2.transform.localRotation.x,leg2.transform.localRotation.y,0f)),.5f);
 		

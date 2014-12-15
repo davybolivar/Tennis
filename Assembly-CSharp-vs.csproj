@@ -46,13 +46,17 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\P2BodyMovement.cs" />
      <Compile Include="Assets\Scripts\AI.cs" />
+     <Compile Include="Assets\Scripts\AISwing.cs" />
      <Compile Include="Assets\Scripts\BallControl.cs" />
      <Compile Include="Assets\Scripts\BodyMovement.cs" />
      <Compile Include="Assets\Scripts\CurveX.cs" />
      <Compile Include="Assets\Scripts\LerpTarget.cs" />
+     <Compile Include="Assets\Scripts\P2BodyMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerControls.cs" />
+     <Compile Include="Assets\Scripts\ScoreScript.cs" />
+     <Compile Include="Assets\Scripts\ScreenShake.cs" />
+     <Compile Include="Assets\Scripts\SwingRacket.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

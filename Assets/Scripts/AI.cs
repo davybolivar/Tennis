@@ -15,11 +15,13 @@ public class AI : MonoBehaviour {
 	void Update () {
 		if(target.GetComponent<BallControl>().ballServe == 2)
 		{
+			if(target.transform.localPosition.y <= 4 && target.transform.localPosition.y >= -4.5)
+			{
 			var step = speed * Time.deltaTime;
-		
 			// Move our position a step closer to the target.
 			transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x,target.transform.localPosition.y+offset,
-		                                                                         transform.position.z), speed*Time.deltaTime);
+		                                                                      transform.position.z), speed*Time.deltaTime);
+			}
 		}
 	}
 

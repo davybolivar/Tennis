@@ -5,6 +5,8 @@ public class BallControl : MonoBehaviour {
 	public GameObject camera;
 	public GameObject ballSprite;
 	public int ballServe;
+	public bool replay;
+	public GameObject p1,p2;
 
 	void Start () {
 		StartCoroutine ("StartGame");
@@ -51,8 +53,8 @@ public class BallControl : MonoBehaviour {
 		var velocity = rigidbody2D.velocity;
 		velocity.y = 0;
 		velocity.x = 0;
+		rigidbody2D.mass = .25f;
 		rigidbody2D.velocity = velocity;
-
 		gameObject.transform.position = new Vector2 (0, 0);
 
 		hi (5.0f);
@@ -65,6 +67,8 @@ public class BallControl : MonoBehaviour {
 			var velY = rigidbody2D.velocity;
 			velY.y = (velY.y/2.0f)+(col.collider.rigidbody2D.velocity.y/3.0f);
 			rigidbody2D.velocity = velY;
+
+			rigidbody2D.mass -= .01f;
 
 			camera.GetComponent<LerpTarget>().camOffset *= -1f;
 
@@ -86,12 +90,14 @@ public class BallControl : MonoBehaviour {
 
 	IEnumerator ReplayDelay()
 	{	
+		replay = true;
 		ballServe = 1;
 		camera.transform.position = Vector3.Lerp (camera.transform.localPosition, new Vector3(0,0,camera.transform.localPosition.z),.1f);
 		ballSprite.GetComponent<TrailRenderer> ().enabled = false;
 		hasWon ();
 		yield return new WaitForSeconds (3f);
 		ballSprite.GetComponent<TrailRenderer> ().enabled = true;
+		replay = false;
 		resetBall();
 	}
 }
