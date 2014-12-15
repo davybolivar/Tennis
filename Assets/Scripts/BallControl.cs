@@ -8,6 +8,9 @@ public class BallControl : MonoBehaviour {
 	public bool replay;
 	public GameObject p1,p2;
 
+	//Effects
+	public GameObject shine;
+
 	void Start () {
 		StartCoroutine ("StartGame");
 		//hi (5.0f);
@@ -79,6 +82,7 @@ public class BallControl : MonoBehaviour {
 		}
 		else if(col.gameObject.tag == "P1Goal" || col.gameObject.tag == "P2Goal")
 		{
+			Instantiate(shine);
 			//resetBall();
 			StartCoroutine("ReplayDelay");
 		}
